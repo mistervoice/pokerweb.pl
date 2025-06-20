@@ -138,4 +138,241 @@
     .card2 {
       top: 70%;
       left: 20%;
-      animation-name: floatCard2
+      animation-name: floatCard2;
+      animation-duration: 18s;
+      animation-delay: 2s;
+    }
+    .card3 {
+      top: 40%;
+      right: 15%;
+      animation-name: floatCard3;
+      animation-duration: 16s;
+      animation-delay: 4s;
+    }
+    .card4 {
+      top: 80%;
+      right: 30%;
+      animation-name: floatCard4;
+      animation-duration: 20s;
+      animation-delay: 6s;
+    }
+    @keyframes floatCard1 {
+      0% { transform: translateY(0) rotate(0deg);}
+      100% { transform: translateY(-30px) rotate(10deg);}
+    }
+    @keyframes floatCard2 {
+      0% { transform: translateY(0) rotate(0deg);}
+      100% { transform: translateY(-40px) rotate(-12deg);}
+    }
+    @keyframes floatCard3 {
+      0% { transform: translateY(0) rotate(0deg);}
+      100% { transform: translateY(-25px) rotate(15deg);}
+    }
+    @keyframes floatCard4 {
+      0% { transform: translateY(0) rotate(0deg);}
+      100% { transform: translateY(-35px) rotate(-8deg);}
+    }
+
+    /* Sekcje i ikony */
+    section {
+      margin-bottom: 36px;
+      position: relative;
+      padding-left: 40px;
+    }
+    section h2 {
+      color: #f5af19;
+      font-weight: 600;
+      font-size: 1.8rem;
+      margin-bottom: 18px;
+      border-left: 6px solid #f12711;
+      padding-left: 12px;
+      text-shadow: 0 0 8px #f5af19;
+      position: relative;
+      display: inline-block;
+    }
+    section:nth-of-type(2) h2::before {
+      content: url('https://cdn-icons-png.flaticon.com/512/942/942748.png'); /* poker chip */
+      position: absolute;
+      left: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      filter: drop-shadow(0 0 2px #f12711);
+    }
+    section:nth-of-type(3) h2::before {
+      content: url('https://cdn-icons-png.flaticon.com/512/1546/1546943.png'); /* playing cards */
+      position: absolute;
+      left: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      filter: drop-shadow(0 0 2px #f12711);
+    }
+    section:nth-of-type(4) h2::before {
+      content: url('https://cdn-icons-png.flaticon.com/512/3081/3081976.png'); /* dollar sign */
+      position: absolute;
+      left: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      filter: drop-shadow(0 0 2px #f12711);
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 14px;
+      color: #eee;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      color: #eee;
+    }
+    ul li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      cursor: default;
+      transition: color 0.3s ease;
+    }
+    ul li::before {
+      content: "♦";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #f12711;
+      text-shadow: 0 0 6px #f12711;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    ul li:hover {
+      color: #f5af19;
+      text-shadow: 0 0 6px #f5af19;
+    }
+    a {
+      color: #f5af19;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #fff;
+      text-decoration: underline;
+      text-shadow: 0 0 8px #fff;
+    }
+    /* Stopka z pokerowym tłem */
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+      padding: 25px 15px;
+      user-select: none;
+      border-top: 1px solid rgba(255 255 255 / 0.15);
+      background: linear-gradient(90deg, #203a43, #2c5364);
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 150%;
+      height: 150%;
+      background: url('https://cdn-icons-png.flaticon.com/512/3135/3135718.png') no-repeat center/contain;
+      opacity: 0.05;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    /* Responsywność */
+    @media (max-width: 600px) {
+      main {
+        margin: 25px 15px 50px;
+        padding: 25px 20px;
+      }
+      header h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      ul li {
+        font-size: 1rem;
+      }
+      section {
+        padding-left: 30px;
+      }
+      section h2::before {
+        left: -30px;
+        width: 24px;
+        height: 24px;
+      }
+      header::after {
+        width: 50px;
+        height: 75px;
+        right: 10px;
+      }
+      .card {
+        width: 40px;
+        height: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Domena <strong>pokerweb.pl</strong> na sprzedaż</h1>
+</header>
+
+<main>
+  <!-- Animowane karty -->
+  <div class="card card1" aria-hidden="true"></div>
+  <div class="card card2" aria-hidden="true"></div>
+  <div class="card card3" aria-hidden="true"></div>
+  <div class="card card4" aria-hidden="true"></div>
+
+  <section>
+    <p>Profesjonalna domena <strong>pokerweb.pl</strong> idealna pod pokerowy blog, serwis z grami, turniejami online oraz wszelkie projekty związane z pokerm i hazardem online.</p>
+    <p>Domena jest gotowa do użycia i może być Twoja już dziś!</p>
+  </section>
+
+  <section>
+    <h2>Dlaczego warto?</h2>
+    <ul>
+      <li>Łatwa do zapamiętania i wpisania</li>
+      <li>Branża pokerowa i hazardowa — popularna i dochodowa</li>
+      <li>Idealna pod SEO i kampanie reklamowe</li>
+      <li>Gotowy landing page</li>
+      <li>Możliwość szybkiego uruchomienia własnego serwisu</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>O pokerze i grach online</h2>
+    <p>Poker to jedna z najbardziej popularnych gier karcianych na świecie, łącząca strategię, psychologię i szczyptę szczęścia. Od lat poker online zdobywa coraz większą rzeszę fanów, oferując emocjonujące turnieje, gry cashowe oraz możliwość rywalizacji z graczami z całego globu.</p>
+    <p>Strony internetowe poświęcone pokerowi to doskonałe miejsce dla początkujących i zaawansowanych graczy, którzy chcą poprawić swoje umiejętności, śledzić aktualności pokerowe lub uczestniczyć w społeczności pokerowej.</p>
+    <p>Domena <strong>pokerweb.pl</strong> świetnie nadaje się na platformę oferującą kursy, strategie, recenzje pokerroomów lub serwis agregujący turnieje i promocje pokerowe.</p>
+    <p>Jeśli interesujesz się również innymi grami online, pokerweb.pl może rozszerzyć swoją ofertę o kasyno, zakłady sportowe czy gry karciane.</p>
+  </section>
+
+  <section>
+    <h2>Kontakt i zakup</h2>
+    <p>Zainteresowany? Skontaktuj się z nami, aby dowiedzieć się więcej i zarezerwować domenę.</p>
+    <p>Email: <a href="mailto:sprzedaz@pokerweb.pl">sprzedaz@pokerweb.pl</a></p>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2025 pokerweb.pl – Wszystkie prawa zastrzeżone.
+</footer>
+
+</body>
+</html>
