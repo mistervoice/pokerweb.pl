@@ -5,322 +5,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>pokerweb.pl – Domena na sprzedaż</title>
   <meta name="description" content="Profesjonalna domena pokerweb.pl na sprzedaż. Idealna pod pokerowy blog, serwis z grami i turniejami online." />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Orbitron:wght@700&display=swap" rel="stylesheet" />
-
   <style>
-    /* Reset i baza */
-    * {
-      box-sizing: border-box;
-    }
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #eee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background: #f8f9fa;
+      color: #212529;
       line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
-    /* Nagłówek z neonowym efektem i kartą */
     header {
-      background: linear-gradient(90deg, #f12711, #f5af19);
-      padding: 35px 20px;
+      background: #0078d7;
+      color: white;
+      padding: 20px 15px;
       text-align: center;
-      box-shadow: 0 0 25px #f12711;
-      animation: neonGlow 2.5s ease-in-out infinite alternate;
-      position: relative;
-      overflow: hidden;
-    }
-    @keyframes neonGlow {
-      0% {
-        text-shadow:
-          0 0 8px #f12711,
-          0 0 15px #f5af19,
-          0 0 20px #f12711,
-          0 0 30px #f5af19;
-      }
-      100% {
-        text-shadow:
-          0 0 20px #f5af19,
-          0 0 30px #f12711,
-          0 0 40px #f5af19,
-          0 0 50px #f12711;
-      }
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
     }
     header h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.8rem;
       margin: 0;
-      letter-spacing: 2px;
+      font-size: 2.4em;
+      font-weight: 700;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      user-select: none;
-      position: relative;
-      z-index: 2;
+      color: #00d4ff;
+      text-shadow:
+        0 0 5px #00d4ff,
+        0 0 10px #00d4ff,
+        0 0 20px #00a1b8,
+        0 0 30px #0078d7;
     }
-    header strong {
-      color: #fff;
-      text-shadow: 0 0 10px #fff;
-    }
-    /* Obrazek karty w nagłówku */
-    header::after {
-      content: "";
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      width: 80px;
-      height: 120px;
-      background: url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png') no-repeat center/contain;
-      opacity: 0.2;
-      transform: translateY(-50%);
-      pointer-events: none;
-      filter: drop-shadow(0 0 5px #f12711);
-      z-index: 1;
-    }
-    /* Główna część */
     main {
-      flex-grow: 1;
-      max-width: 800px;
-      background: rgba(255 255 255 / 0.05);
-      margin: 40px auto 60px;
-      padding: 30px 40px;
-      border-radius: 15px;
-      box-shadow:
-        0 4px 20px rgba(0,0,0,0.6),
-        inset 0 0 15px rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      color: #ddd;
-      position: relative;
-      overflow: hidden;
+      max-width: 700px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px 30px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      border-radius: 12px;
     }
-    main::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
-      animation: rotateBg 20s linear infinite;
-      z-index: 0;
-      pointer-events: none;
-    }
-    @keyframes rotateBg {
-      0% { transform: rotate(0deg);}
-      100% { transform: rotate(360deg);}
-    }
-    main > * {
-      position: relative;
-      z-index: 1;
-    }
-    /* Animowane karty w tle */
-    .card {
-      position: absolute;
-      width: 60px;
-      height: 90px;
-      background: url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png') no-repeat center/contain;
-      opacity: 0.12;
-      filter: drop-shadow(0 0 6px #f12711);
-      animation-timing-function: ease-in-out;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
-      will-change: transform, opacity;
-    }
-    /* Każda karta ma swoją animację przesuwania i obracania */
-    .card1 {
-      top: 20%;
-      left: 10%;
-      animation-name: floatCard1;
-      animation-duration: 14s;
-    }
-    .card2 {
-      top: 70%;
-      left: 20%;
-      animation-name: floatCard2;
-      animation-duration: 18s;
-      animation-delay: 2s;
-    }
-    .card3 {
-      top: 40%;
-      right: 15%;
-      animation-name: floatCard3;
-      animation-duration: 16s;
-      animation-delay: 4s;
-    }
-    .card4 {
-      top: 80%;
-      right: 30%;
-      animation-name: floatCard4;
-      animation-duration: 20s;
-      animation-delay: 6s;
-    }
-    @keyframes floatCard1 {
-      0% { transform: translateY(0) rotate(0deg);}
-      100% { transform: translateY(-30px) rotate(10deg);}
-    }
-    @keyframes floatCard2 {
-      0% { transform: translateY(0) rotate(0deg);}
-      100% { transform: translateY(-40px) rotate(-12deg);}
-    }
-    @keyframes floatCard3 {
-      0% { transform: translateY(0) rotate(0deg);}
-      100% { transform: translateY(-25px) rotate(15deg);}
-    }
-    @keyframes floatCard4 {
-      0% { transform: translateY(0) rotate(0deg);}
-      100% { transform: translateY(-35px) rotate(-8deg);}
-    }
-
-    /* Sekcje i ikony */
     section {
-      margin-bottom: 36px;
-      position: relative;
-      padding-left: 40px;
+      margin-bottom: 30px;
     }
-    section h2 {
-      color: #f5af19;
-      font-weight: 600;
-      font-size: 1.8rem;
-      margin-bottom: 18px;
-      border-left: 6px solid #f12711;
-      padding-left: 12px;
-      text-shadow: 0 0 8px #f5af19;
-      position: relative;
-      display: inline-block;
-    }
-    section:nth-of-type(2) h2::before {
-      content: url('https://cdn-icons-png.flaticon.com/512/942/942748.png'); /* poker chip */
-      position: absolute;
-      left: -40px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 30px;
-      height: 30px;
-      filter: drop-shadow(0 0 2px #f12711);
-    }
-    section:nth-of-type(3) h2::before {
-      content: url('https://cdn-icons-png.flaticon.com/512/1546/1546943.png'); /* playing cards */
-      position: absolute;
-      left: -40px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 30px;
-      height: 30px;
-      filter: drop-shadow(0 0 2px #f12711);
-    }
-    section:nth-of-type(4) h2::before {
-      content: url('https://cdn-icons-png.flaticon.com/512/3081/3081976.png'); /* dollar sign */
-      position: absolute;
-      left: -40px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 30px;
-      height: 30px;
-      filter: drop-shadow(0 0 2px #f12711);
-    }
-    p {
-      font-size: 1.1rem;
+    h2 {
+      color: #0078d7;
       margin-bottom: 14px;
-      color: #eee;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-      color: #eee;
-    }
-    ul li {
+      font-weight: 700;
       position: relative;
-      padding-left: 25px;
-      margin-bottom: 12px;
-      font-size: 1.1rem;
-      cursor: default;
-      transition: color 0.3s ease;
+      padding-bottom: 6px;
+      letter-spacing: 0.8px;
     }
-    ul li::before {
-      content: "♦";
+    h2::after {
+      content: '';
       position: absolute;
       left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #f12711;
-      text-shadow: 0 0 6px #f12711;
-      font-weight: bold;
-      font-size: 1.2rem;
+      bottom: 0;
+      height: 3px;
+      width: 60px;
+      background: linear-gradient(90deg, #00d4ff, #0078d7);
+      border-radius: 2px;
+      box-shadow: 0 0 8px #00a1b8;
     }
-    ul li:hover {
-      color: #f5af19;
-      text-shadow: 0 0 6px #f5af19;
+    ul {
+      padding-left: 20px;
+      color: #444;
+      font-weight: 600;
     }
     a {
-      color: #f5af19;
+      color: #0078d7;
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s ease;
     }
     a:hover {
-      color: #fff;
+      color: #005a9e;
       text-decoration: underline;
-      text-shadow: 0 0 8px #fff;
     }
-    /* Stopka z pokerowym tłem */
     footer {
       text-align: center;
-      font-size: 0.9rem;
-      color: #aaa;
-      padding: 25px 15px;
-      user-select: none;
-      border-top: 1px solid rgba(255 255 255 / 0.15);
-      background: linear-gradient(90deg, #203a43, #2c5364);
-      box-shadow: inset 0 1px 4px rgba(0,0,0,0.2);
-      position: relative;
-      overflow: hidden;
+      font-size: 0.9em;
+      color: #666;
+      padding: 20px 10px;
+      margin-top: 40px;
+      font-style: italic;
+      letter-spacing: 0.5px;
     }
-    footer::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 150%;
-      height: 150%;
-      background: url('https://cdn-icons-png.flaticon.com/512/3135/3135718.png') no-repeat center/contain;
-      opacity: 0.05;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-    }
-    /* Responsywność */
-    @media (max-width: 600px) {
+    @media (max-width: 480px) {
       main {
-        margin: 25px 15px 50px;
-        padding: 25px 20px;
+        margin: 15px;
+        padding: 20px;
       }
       header h1 {
-        font-size: 1.8rem;
-      }
-      h2 {
-        font-size: 1.4rem;
-      }
-      ul li {
-        font-size: 1rem;
-      }
-      section {
-        padding-left: 30px;
-      }
-      section h2::before {
-        left: -30px;
-        width: 24px;
-        height: 24px;
-      }
-      header::after {
-        width: 50px;
-        height: 75px;
-        right: 10px;
-      }
-      .card {
-        width: 40px;
-        height: 60px;
+        font-size: 1.8em;
       }
     }
   </style>
@@ -332,11 +105,6 @@
 </header>
 
 <main>
-  <!-- Animowane karty -->
-  <div class="card card1" aria-hidden="true"></div>
-  <div class="card card2" aria-hidden="true"></div>
-  <div class="card card3" aria-hidden="true"></div>
-  <div class="card card4" aria-hidden="true"></div>
 
   <section>
     <p>Profesjonalna domena <strong>pokerweb.pl</strong> idealna pod pokerowy blog, serwis z grami, turniejami online oraz wszelkie projekty związane z pokerm i hazardem online.</p>
@@ -359,19 +127,18 @@
     <p>Poker to jedna z najbardziej popularnych gier karcianych na świecie, łącząca strategię, psychologię i szczyptę szczęścia. Od lat poker online zdobywa coraz większą rzeszę fanów, oferując emocjonujące turnieje, gry cashowe oraz możliwość rywalizacji z graczami z całego globu.</p>
     <p>Strony internetowe poświęcone pokerowi to doskonałe miejsce dla początkujących i zaawansowanych graczy, którzy chcą poprawić swoje umiejętności, śledzić aktualności pokerowe lub uczestniczyć w społeczności pokerowej.</p>
     <p>Domena <strong>pokerweb.pl</strong> świetnie nadaje się na platformę oferującą kursy, strategie, recenzje pokerroomów lub serwis agregujący turnieje i promocje pokerowe.</p>
-    <p>Jeśli interesujesz się również innymi grami online, pokerweb.pl może rozszerzyć swoją ofertę o kasyno, zakłady sportowe czy gry karciane.</p>
+    <p>Jeśli interesujesz się również innymi grami online, pokerweb.pl może rozszerzyć swój zakres o kasyno online, gry hazardowe czy esport, tworząc atrakcyjny i dochodowy portal.</p>
   </section>
 
   <section>
-    <h2>Kontakt i zakup</h2>
-    <p>Zainteresowany? Skontaktuj się z nami, aby dowiedzieć się więcej i zarezerwować domenę.</p>
-    <p>Email: <a href="mailto:sprzedaz@pokerweb.pl">sprzedaz@pokerweb.pl</a></p>
+    <h2>Gdzie kupić domenę?</h2>
+    <p>Domenę można nabyć na platformie <a href="https://www.aftermarket.pl/domena/pokerweb.pl" target="_blank" rel="noopener noreferrer">Aftermarket.pl</a>.</p>
   </section>
 
 </main>
 
 <footer>
-  &copy; 2025 pokerweb.pl – Wszystkie prawa zastrzeżone.
+  &copy; 2025 pokerweb.pl — Wszelkie prawa zastrzeżone.
 </footer>
 
 </body>
